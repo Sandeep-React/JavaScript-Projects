@@ -39,7 +39,7 @@ myButton.addEventListener("click", async function()
     second()
     const response = await fetch("https://api.quotable.io/random")
     let quotes = await response.json()
-
+    
     myQuote.innerText = quotes.content//<span id="myquote"></span>
     myAuthor.innerText = quotes.author// <span id="myauthor"></span>
     first()
