@@ -12,6 +12,44 @@ body{
     border: 1px solid white;
     box-shadow: 2px 2px 20px black;
     width: 90%;
-    height: 30%;
+    height: 40%;
     text-align: center;
+}
+
+#myquote{
+    font-size: 200%;
+    font-family: sans-serif;
+    font-weight: 900;
+}
+
+#myauthor{
+    font-size: 180%;
+    font-style: italic;
+    
+
+}
+
+.author {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#left, #right{
+    font-size: 50px;
+}
+
+.buttons{
+    display: flex;
+    justify-content:space-around ;
+}
+
+#btn{
+    font-size: 30px;
+    padding: 10px;
+    box-shadow: 2px 2px 20px black;
+    border-radius: 10px;
+}
+
+#copy, #volume {
+    font-size: 30px;
 }
