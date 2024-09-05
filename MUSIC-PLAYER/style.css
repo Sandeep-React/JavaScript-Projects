@@ -1,0 +1,70 @@
+body{
+    margin: 0px;
+    background-image: url("https://images.unsplash.com/uploads/1412282232015a06e258a/4bdd2a58?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.container {
+    width: 400px;
+    height: 600px;
+    border: 5px solid black;
+    box-shadow: 2px 2px 20px white;
+    text-align: center;
+    border-radius: 10%;
+}
+
+#singer #song {
+    font-family: sans-serif;
+}
+
+#singer {
+    font-style: italic;
+    text-shadow: 2px 2px 20px white;
+}
+
+.controls{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;
+}
+
+#play, #backward, #forward {
+    font-size: 30px;
+}
+
+#play{
+    border: 1px solid white;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+#play:hover{
+    color: black;
+    background-color: white;
+    
+}
+
+@media screen and (max-width: 600px)
+{
+    
+    .container{
+        width: 300px;
+    }
+    img{
+        width: 250px;
+        height: 250px;
+    }
+    #play, #forward,#backward{
+        font-size: 10px;
+    }
+}
