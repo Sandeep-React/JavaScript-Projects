@@ -7,11 +7,13 @@ function playAudio(){
 
     isAudioPlaying = true
     myAudio.play()
+    myPlay.classList.replace("fa-play","fa-pause")
 }
 
 function pauseAudio(){
     isAudioPlaying = false
     myAudio.pause()
+    myPlay.classList.replace("fa-pause","fa-play")
 }
 
 myPlay.addEventListener("click", function(){
@@ -21,5 +23,4 @@ myPlay.addEventListener("click", function(){
     }else{
         playAudio()
     }
-
 })
