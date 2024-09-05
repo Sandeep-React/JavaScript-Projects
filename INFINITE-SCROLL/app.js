@@ -8,6 +8,14 @@ zWqn63M8xicFNABq83q3TDbwZPMma6FZgRNIyLc1_KI
 
 */
 const imageContainer = document.getElementById("imagecontainer")
+const myLoader = document.getElementById("loader")
+
+function controlLoader(){
+
+    myLoader.hidden = false
+}
+
+controlLoader()
 
 async function getImages() {
     const response = await fetch("https://api.unsplash.com/photos/?client_id=Jhg45wbjlt-9FIA8B3hzHueL9oKAmiKb7j8c5aBg63Y")
@@ -25,7 +33,12 @@ async function getImages() {
     })
 }
 
-getImages()
+// getImages()
+setTimeout(function(){
+
+    getImages()
+    myLoader.hidden = true
+}, 1000)
 
 // window object refers the entire window of the browser.
 window.addEventListener("scroll", function(){

@@ -24,6 +24,8 @@ h2{
     opacity: 0.4;
 }
 
+
+
 @media screen and (max-width: 600px) {
     .imagecontainer >img{
         width: 390px;
