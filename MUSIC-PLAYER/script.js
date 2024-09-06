@@ -68,12 +68,12 @@ function loadSong(song){
 
  // Forward function
  function nextSong(){
+     songIndex ++
     if(songIndex > songsData.length -1){
         songIndex = 0
     }
-    console.log(songIndex)
+    // console.log(songIndex)
     loadSong(songsData[songIndex])
-    songIndex ++
     playAudio()
  }
 
@@ -85,12 +85,13 @@ function loadSong(song){
 
  // backward function
  function previousSong(){
+     songIndex --
     if(songIndex < 0){
         songIndex = songsData.length-1
     }
-    console.log(songIndex)
+    // console.log(songIndex)
+    
     loadSong(songsData[songIndex])
-    songIndex --
     playAudio()
  }
 
