@@ -1,5 +1,9 @@
 const myAudio = document.querySelector("audio")
 const myPlay =  document.getElementById("play")
+const mysinger = document.getElementById("singer")
+const mysong = document.getElementById("song")
+const myImage = document.querySelector("img")
+
 
 isAudioPlaying = false
 
@@ -24,3 +28,37 @@ myPlay.addEventListener("click", function(){
         playAudio()
     }
 })
+
+const data = [
+    {
+        singerName: "Sophie Devine",
+        songName: "All the way in the Desert",
+        info: "image-1"
+    },
+    {
+        singerName: "Jemma Barbsy",
+        songName: "In to the sky",
+        info:"image-2"
+    },
+    {
+        singerName: "Ecclestone",
+        songName: "Sing a song",
+        info: "image-3"
+    }
+]
+
+// song = {
+//     singerName: "Sophie Devine",
+//     singName: "All the way in the Desert",
+//     info: "image-1"
+// }
+
+function loadSong(song){
+    mysinger.innerText = song.singerName
+    mysong.innerText = song.songName
+    myImage.src = `IMAGES/${song.info}.jpg`
+    myAudio.src = `AUDIO/${song.info}.mp3`
+
+}
+
+loadSong(data[0])
