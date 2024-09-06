@@ -3,6 +3,8 @@ const myPlay =  document.getElementById("play")
 const mysinger = document.getElementById("singer")
 const mysong = document.getElementById("song")
 const myImage = document.querySelector("img")
+const myforward = document.getElementById("forward")
+const mybackward = document.getElementById("backward")
 
 
 isAudioPlaying = false
@@ -29,7 +31,7 @@ myPlay.addEventListener("click", function(){
     }
 })
 
-const data = [
+const songsData = [
     {
         singerName: "Sophie Devine",
         songName: "All the way in the Desert",
@@ -58,7 +60,26 @@ function loadSong(song){
     mysong.innerText = song.songName
     myImage.src = `IMAGES/${song.info}.jpg`
     myAudio.src = `AUDIO/${song.info}.mp3`
-
 }
 
-loadSong(data[0])
+// loadSong(data[0])
+
+ let songIndex = 0
+
+ // Forward function
+ function nextSong(){
+    if(songIndex > songsData.length -1){
+        songIndex = 0
+    }
+    console.log(songIndex)
+    loadSong(songsData[songIndex])
+    songIndex ++
+    playAudio()
+ }
+
+//  myforward.addEventListener("click", nextSong) // we can also write it
+
+ myforward.addEventListener("click", function(){
+    nextSong()
+ })
+
