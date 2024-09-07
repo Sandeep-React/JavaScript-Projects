@@ -117,10 +117,10 @@ myAudio.addEventListener("timeupdate", function(event){
      myProgressBar.style.width = `${myPercentage}%`
 
    let durationInMinutes = Math.floor((myDuration / 60))
-   console.log(durationInMinutes)
+//    console.log(durationInMinutes)
 
    let durationInSeconds = Math.floor((myDuration % 60))
-   console.log(durationInSeconds )
+//    console.log(durationInSeconds )
 
    if(durationInSeconds < 9){
 
