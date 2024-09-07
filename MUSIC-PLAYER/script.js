@@ -6,6 +6,8 @@ const myImage = document.querySelector("img")
 const myForward = document.getElementById("forward")
 const myBackward = document.getElementById("backward")
 const myProgressBar = document.getElementById("progressbar")
+const durationTime = document.getElementById("duration")
+const timePlayed = document.getElementById("currenttime")
 
 isAudioPlaying = false
 
@@ -114,5 +116,30 @@ myAudio.addEventListener("timeupdate", function(event){
 
      myProgressBar.style.width = `${myPercentage}%`
 
+   let durationInMinutes = Math.floor((myDuration / 60))
+   console.log(durationInMinutes)
+
+   let durationInSeconds = Math.floor((myDuration % 60))
+   console.log(durationInSeconds )
+
+   if(durationInSeconds < 9){
+
+       durationInSeconds = `0${durationInSeconds}`
+   }
+   
+  durationTime.innerText = `${durationInMinutes}:${durationInSeconds}`
+  
+  
+  let currentTimeInMinutes = Math.floor((myCurrentTime / 60))
+
+  let currentTimeInSeconds = Math.floor((myCurrentTime % 60))
+
+   if(currentTimeInSeconds < 9){
+
+       currentTimeInSeconds = `0${currentTimeInSeconds}`
+   }
+   
+  timePlayed.innerText = `${currentTimeInMinutes}:${currentTimeInSeconds}`
+   
 })
 
