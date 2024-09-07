@@ -16,12 +16,14 @@ function playAudio(){
     isAudioPlaying = true
     myAudio.play()
     myPlay.classList.replace("fa-play","fa-pause")
+    myImage.classList.add("rotateimage")
 }
 
 function pauseAudio(){
     isAudioPlaying = false
     myAudio.pause()
     myPlay.classList.replace("fa-pause","fa-play")
+    myImage.classList.remove("rotateimage")
 }
 
 myPlay.addEventListener("click", function(){
