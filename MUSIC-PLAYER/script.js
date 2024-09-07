@@ -1,11 +1,11 @@
 const myAudio = document.querySelector("audio")
 const myPlay =  document.getElementById("play")
-const mysinger = document.getElementById("singer")
-const mysong = document.getElementById("song")
+const mySinger = document.getElementById("singer")
+const mySong = document.getElementById("song")
 const myImage = document.querySelector("img")
-const myforward = document.getElementById("forward")
-const mybackward = document.getElementById("backward")
-
+const myForward = document.getElementById("forward")
+const myBackward = document.getElementById("backward")
+const myProgressBar = document.getElementById("progressbar")
 
 isAudioPlaying = false
 
@@ -56,8 +56,8 @@ const songsData = [
 // }
 
 function loadSong(song){
-    mysinger.innerText = song.singerName
-    mysong.innerText = song.songName
+    mySinger.innerText = song.singerName
+    mySong.innerText = song.songName
     myImage.src = `IMAGES/${song.info}.jpg`
     myAudio.src = `AUDIO/${song.info}.mp3`
 }
@@ -79,7 +79,7 @@ function loadSong(song){
 
 //  myforward.addEventListener("click", nextSong) // we can also write it
 
- myforward.addEventListener("click", function(){
+ myForward.addEventListener("click", function(){
     nextSong()
  })
 
@@ -95,5 +95,24 @@ function loadSong(song){
     playAudio()
  }
 
- mybackward.addEventListener("click",previousSong)
+ myBackward.addEventListener("click",previousSong)
+
+
+//  Current time and total duration of the audio 
+myAudio.addEventListener("timeupdate", function(event){
+    // console.log(event)
+    // console.log(event.srcElement.duration)
+    // console.log(event.srcElement.currentTime)
+    // console.table([event.srcElement.duration, event.srcElement.currentTime])
+
+    let myDuration = event.srcElement.duration
+    let myCurrentTime = event.srcElement.currentTime
+    
+    let myPercentage = (myCurrentTime / myDuration) * 100 // Percentage of the audio played
+
+    // console.log(myPercentage)
+
+     myProgressBar.style.width = `${myPercentage}%`
+
+})
 
