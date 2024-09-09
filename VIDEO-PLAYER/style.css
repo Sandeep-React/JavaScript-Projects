@@ -1,0 +1,12 @@
+body{
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+video{
+    width: 70%;
+    height: 50%;
+}
