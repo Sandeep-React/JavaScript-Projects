@@ -1,3 +1,10 @@
+/* Variables --> help to reuse some logic */
+:root{
+    --bcolor:orange;
+}
+
+
+
 body{
     margin: 0px;
     display: flex;
@@ -22,7 +29,8 @@ body{
     border: 1px solid orange;
     width: 10%;
     height: 7px;
-    background-color: orange;
+    /* background-color: orange; */
+    background-color: var(--bcolor);
     border-radius: 10px;
 }
 
@@ -38,7 +46,7 @@ body{
     border: 1px solid orange;
     width: 30%;
     height: 7px;
-    background-color: orange;
+    background-color: var(--bcolor);
     border-radius: 10px;
 }
 
