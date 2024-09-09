@@ -6,7 +6,65 @@ body{
     margin-top: 50px;
 }
 
-video{
-    width: 70%;
-    height: 50%;
+
+
+
+.progress-range{
+    border: 1px solid black;
+    width: 100%;
+    height: 7px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.progress-bar{
+    border: 1px solid orange;
+    width: 30%;
+    height: 7px;
+    background-color: orange;
+    border-radius: 10px;
+}
+
+.volume-range{
+    border: 1px solid black;
+    width: 150px;
+    height: 7px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.volume-bar{
+    border: 1px solid orange;
+    width: 30%;
+    height: 7px;
+    background-color: orange;
+    border-radius: 10px;
+}
+
+.volume {
+    display: flex;
+    align-items: center;
+}
+
+.controls-left {
+    display: flex;
+}
+
+.controls-right{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#play, #volume, #volume-range {
+    margin-left: 15px;
+    font-size: 25px;
+}
+
+.time{
+    display: flex;
+}
+
+#my-speed, #time, #full-screen{
+    margin-left: 15px;
+    margin-top: -20px;
 }
