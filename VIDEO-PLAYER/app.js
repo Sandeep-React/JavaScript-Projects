@@ -6,7 +6,7 @@ const videoTime = document.getElementById("current-time")
 const progressRange = document.getElementById("progress-range")
 const volumeRange = document.getElementById("volume-range")
 const volumeBar = document.getElementById("volume-bar")
-
+const myVolume = document.getElementById("volume")
 
 let isVideoPlaying = false
 
@@ -124,4 +124,40 @@ volumeRange.addEventListener("click", function(event){
     }else{
         myVideo.volume = 1
     }
+})
+
+let isMuted = false
+
+function mute(){
+    isMuted = true
+    myVideo.volume = 0
+    myVolume.classList.replace("fa-volume-up", "fa-volume-mute")
+    volumeBar.style.width = `${0}%`
+}
+function unMute(){
+    isMuted = false
+
+    const totalWidth = event.srcElement.offsetWidth
+    const clickedWidth = event.offsetX
+    const volumePercentage =(clickedWidth / totalWidth) * 100
+    volumeBar.style.width = `${volumePercentage}%`
+
+    let volumeInfo = clickedWidth / totalWidth
+    
+    if(volumeInfo < 0.5){
+        myVideo.volume = 0.2
+    }else{
+        myVideo.volume = 1
+    }
+   
+    myVolume.classList.replace( "fa-volume-mute","fa-volume-up")
+}
+
+myVolume.addEventListener("click", function(){
+   if(isMuted){
+    unMute()
+   }else{
+    mute()
+   }
+   
 })
