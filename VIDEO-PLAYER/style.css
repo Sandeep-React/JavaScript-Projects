@@ -44,7 +44,7 @@ body{
 
 .volume-bar{
     border: 1px solid orange;
-    width: 30%;
+    width: 0%;
     height: 7px;
     background-color: var(--bcolor);
     border-radius: 10px;

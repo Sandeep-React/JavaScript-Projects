@@ -4,6 +4,9 @@ const progressBar = document.getElementById("progress-bar")
 const videoDuration = document.getElementById("duration-time")
 const videoTime = document.getElementById("current-time")
 const progressRange = document.getElementById("progress-range")
+const volumeRange = document.getElementById("volume-range")
+const volumeBar = document.getElementById("volume-bar")
+
 
 let isVideoPlaying = false
 
@@ -98,4 +101,27 @@ progressRange.addEventListener("click", function(event){
     
     myVideo.currentTime = (clickedWidth / totalWidth) * myVideo.duration
 
+})
+
+volumeRange.addEventListener("click", function(event){
+    const totalWidth = event.srcElement.offsetWidth
+    const clickedWidth = event.offsetX
+    const volumePercentage =(clickedWidth / totalWidth) * 100
+
+    // console.log(clickedWidth / totalWidth) // 0 to 1
+    // console.log(volumePercentage)
+    volumeBar.style.width = `${volumePercentage}%`
+
+    let volumeInfo = clickedWidth / totalWidth
+
+    /* 
+    0 ---> no sound
+    1 ---> max sound
+    */
+
+    if(volumeInfo < 0.5){
+        myVideo.volume = 0.2
+    }else{
+        myVideo.volume = 1
+    }
 })
