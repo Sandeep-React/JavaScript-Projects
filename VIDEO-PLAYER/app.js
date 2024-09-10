@@ -3,7 +3,7 @@ const myVideo = document.querySelector("video")
 const progressBar = document.getElementById("progress-bar")
 const videoDuration = document.getElementById("duration-time")
 const videoTime = document.getElementById("current-time")
-
+const progressRange = document.getElementById("progress-range")
 
 let isVideoPlaying = false
 
@@ -82,4 +82,20 @@ myVideo.addEventListener("timeupdate", function(event){
 
     videoDuration.innerText = formateTime(myDuration)
     videoTime.innerText = `${formateTime(myCurrentTime)}/`
+})
+
+progressRange.addEventListener("click", function(event){
+    // console.log(event)
+    const totalWidth = event.srcElement.offsetWidth
+    // console.log(totalWidth)
+    // offsetWidth:1282 --> Total width is 1282
+    const clickedWidth = event.offsetX
+    // console.log(clickedWidth)
+    const clickedPercentage =(clickedWidth / totalWidth) * 100
+    // console.log(clickedPercentage)
+    
+    progressBar.style.width = `${clickedPercentage}%`   
+    
+    myVideo.currentTime = (clickedWidth / totalWidth) * myVideo.duration
+
 })
