@@ -7,6 +7,7 @@ const progressRange = document.getElementById("progress-range")
 const volumeRange = document.getElementById("volume-range")
 const volumeBar = document.getElementById("volume-bar")
 const myVolume = document.getElementById("volume")
+const speed = document.getElementById("speed")
 
 let isVideoPlaying = false
 
@@ -143,7 +144,7 @@ function unMute(){
     volumeBar.style.width = `${volumePercentage}%`
 
     let volumeInfo = clickedWidth / totalWidth
-    
+
     if(volumeInfo < 0.5){
         myVideo.volume = 0.2
     }else{
@@ -160,4 +161,9 @@ myVolume.addEventListener("click", function(){
     mute()
    }
    
+})
+
+speed.addEventListener("change", function(){
+    // console.log(speed.value)
+    myVideo.playbackRate = speed.value
 })
