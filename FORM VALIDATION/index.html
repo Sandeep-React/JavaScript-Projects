@@ -12,13 +12,16 @@
         <form action="">
             
             <label for="">Full Name</label>
-            <input type="text" name="fullname" placeholder="Enter Fullname..." ><br>
+            <input type="text" name="fullname" placeholder="Enter Fullname..."
+             required minlength="3" maxlength="20"><br>
 
             <label for="">Phone Number</label>
-            <input type="text" name="phoneno" placeholder="Enter phoneno..."><br>
+            <input type="text" name="phoneno" placeholder="Enter phoneno..."
+             pattern="[798][0-9]{9}" required><br>
 
             <label for="">Email</label>
-            <input type="email" name="email" placeholder="Enter Email..."><br>
+            <input type="email" name="email" placeholder="Enter Email..."
+             required><br>
 
             <label for="">Website URL</label>
             <input type="url" name="url" placeholder="Enter URL..."><br>
