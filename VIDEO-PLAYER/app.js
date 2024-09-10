@@ -1,5 +1,6 @@
 const PlayButton = document.getElementById("play")
 const myVideo = document.querySelector("video")
+const progressBar = document.getElementById("progress-bar")
 
 
 let isVideoPlaying = false
@@ -25,4 +26,14 @@ function controlVideo(){
 }
 
 PlayButton.addEventListener("click", controlVideo)
+
+
+myVideo.addEventListener("timeupdate", function(event){
+    // console.log(event) // currentTime, duration
+    let myCurrentTime = myVideo.currentTime
+    let myduration = myVideo.duration
+    // console.log(myCurrentTime, myduration)
+    let progressPercentage = (myCurrentTime / myduration) * 100
+    progressBar.style.width = `${progressPercentage}%`
+})
 

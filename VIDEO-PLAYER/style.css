@@ -27,7 +27,7 @@ body{
 
 .progress-bar{
     border: 1px solid orange;
-    width: 10%;
+    width: 0%;
     height: 7px;
     /* background-color: orange; */
     background-color: var(--bcolor);
