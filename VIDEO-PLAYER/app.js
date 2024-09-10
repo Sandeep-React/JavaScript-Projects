@@ -8,6 +8,8 @@ const volumeRange = document.getElementById("volume-range")
 const volumeBar = document.getElementById("volume-bar")
 const myVolume = document.getElementById("volume")
 const speed = document.getElementById("speed")
+const fullScreen = document.getElementById("full-screen")
+const playerContainer = document.getElementById("player-container")
 
 let isVideoPlaying = false
 
@@ -166,4 +168,29 @@ myVolume.addEventListener("click", function(){
 speed.addEventListener("change", function(){
     // console.log(speed.value)
     myVideo.playbackRate = speed.value
+})
+
+
+let isFullScreen = false
+
+function displayFullScreen(container){
+    if(container.requestFullscreen){
+        container.requestFullscreen()
+    }
+}
+
+function closeFullScreen(container){
+    if(container.exitFullscreen){
+        container.exitFullscreen()
+    }
+}
+
+fullScreen.addEventListener("click", function(){
+
+    if(!isFullScreen){
+        displayFullScreen(playerContainer)
+    }else{
+        closeFullScreen(playerContainer)
+    }
+
 })
