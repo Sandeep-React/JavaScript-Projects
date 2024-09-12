@@ -23,3 +23,10 @@ body{
 .calculator-display > h1{
     font-weight: 100;
 }
+
+.calulator-buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+}
+
