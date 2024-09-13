@@ -3,8 +3,13 @@ const display = document.getElementById("display")
 
 
 function displayResults(data){
-    console.log(data)
-    display.innerText = data
+    
+    if(display.innerText === "0"){
+        display.innerText = data
+    }else{
+        display.innerText = display.innerText + data
+    }
+    
 }
 
 
