@@ -1,15 +1,17 @@
 body{
     margin: 0px;
     background-color: gray;
+    font-family: sans-serif;
 }
 
 .container{
     width: 500px;
-    height: 600px;
+    height: 610px;
     margin: auto;
     border: 5px solid black;
-    margin-top: 200px;
+    margin-top: 20px;
     border-radius: 10px;
+    box-shadow: 2px 2px 20px black;
 }
 .calculator-display{
     width: 100%;
@@ -22,11 +24,23 @@ body{
 
 .calculator-display > h1{
     font-weight: 100;
+    overflow-x: auto;
+}
+
+.calculator-display > h1::-webkit-scrollbar{
+    display:none;
 }
 
 .calulator-buttons{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 15px;
+}
+
+.calulator-buttons > button {
+    font-size: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 2px 2px 20px black;
 }
 
