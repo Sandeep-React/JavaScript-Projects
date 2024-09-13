@@ -13,6 +13,12 @@ function displayResults(data){
     
 }
 
+function addDecimal(){
+    //Decimal must be entered only once
+    if(!display.innerText.includes(".")){
+        display.innerText = `${display.innerText}.`
+    }
+}
 
 
 // console.log(buttons)
@@ -43,8 +49,7 @@ buttons.forEach(function(btn){
     {
         btn.addEventListener("click", function(){
             
-            // display.innerText = btn.innerText
-            displayResults(btn.innerText)
+           addDecimal()
 
         })
     }
