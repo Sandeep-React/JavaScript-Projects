@@ -2,6 +2,7 @@ const buttons = document.querySelectorAll("button")
 const display = document.getElementById("display")
 const allClearBtn = document.getElementById("all-clear")
 const equalBtn = document.getElementById("equal")
+const clear = document.getElementById("clear")
 
 
 function displayResults(data){
@@ -62,4 +63,9 @@ allClearBtn .addEventListener("click", function(){
 
 equalBtn.addEventListener("click", function(){
     display.innerText = eval(display.innerText)
+})
+
+
+clear.addEventListener("click", function(){
+    display.innerText = display.innerText.slice(0, -1)
 })
