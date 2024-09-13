@@ -1,6 +1,7 @@
 const buttons = document.querySelectorAll("button")
 const display = document.getElementById("display")
 const allClearBtn = document.getElementById("all-clear")
+const equalBtn = document.getElementById("equal")
 
 
 function displayResults(data){
@@ -57,4 +58,8 @@ buttons.forEach(function(btn){
 
 allClearBtn .addEventListener("click", function(){
     display.innerText = "0"
+})
+
+equalBtn.addEventListener("click", function(){
+    display.innerText = eval(display.innerText)
 })
