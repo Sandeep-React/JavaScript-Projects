@@ -64,16 +64,28 @@ async function loadParticularRecipe(){
         ingredients: recipeData.data.recipe.ingredients
     }
 
-    // console.log(recipeObject)
+    console.log(recipeObject.ingredients)
 
     rightContainer.innerText =""
 
    const rightData = `<div class="right-food-container">
-    <img src="${recipeObject.imageUrl}" alt="">
-    <h2>${recipeObject.title}</h2>
-    <h3>${recipeObject.publisher}</h3>
-    <h3>${recipeObject.servings}</h3>
-    <h3>${recipeObject.cookingTime}</h3>
+    <img class = "right-image" src="${recipeObject.imageUrl}" alt="">
+    <h2 class = "right-title">Title: ${recipeObject.title}</h2>
+    <h3 class = "right-publisher">Publisher: ${recipeObject.publisher}</h3>
+    <h3 class = "right-servings">Servings: ${recipeObject.servings}</h3>
+    <h3 class = "right-cooking-time">Cooking Time: ${recipeObject.cookingTime}</h3>
+
+    <div class = "ingredients">
+      ${recipeObject.ingredients.map(function(i){
+        console.log(i)
+            return `<div>
+                <span>${i.description}</span> --
+                <span>${i.quantity}</span>
+                <span>${i.unit}</span>
+            </div>`
+      }).join("")}
+    </div>
+
 </div>`
 
     rightContainer.insertAdjacentHTML("afterbegin", rightData)
