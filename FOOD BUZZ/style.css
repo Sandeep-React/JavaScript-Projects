@@ -57,6 +57,11 @@ button{
     box-shadow: 2px 2px 20px black;
     margin-right: 10px;
     border-radius: 10px;
+    overflow-y: auto;
+}
+
+.left-container::-webkit-scrollbar{
+display: none;
 }
 
 .right-container {
@@ -82,4 +87,14 @@ button{
 
 #laugh{
     font-size: 30px;
+}
+
+#myimage {
+    width: 350px;
+    height: 250px;
+
+}
+
+#mypublisher #mytitle {
+    width: 350px;
 }

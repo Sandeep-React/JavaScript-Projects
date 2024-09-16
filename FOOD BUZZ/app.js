@@ -11,6 +11,7 @@ API key
 
 const searchBtn = document.getElementById("search")
 const searchInput = document.getElementById("searchinput")
+const leftContainer = document.getElementById("left-container")
 
 searchBtn.addEventListener("click", ()=>{
     getRecipesData()
@@ -24,7 +25,18 @@ async function getRecipesData()
     const recipesData = await response.json()
     const recpieArray = recipesData.data.recipes
     recpieArray.map(function(i){
-        console.log(i)
+    //   console.log(i)
+   
+    const myImageUrl =i.image_url
+    const myPublisher = i.publisher
+    const myTitle = i.title
+        return leftContainer.insertAdjacentHTML("afterbegin",
+        `<div class="left-food-container">
+        <img src="${myImageUrl}" id="myimage">
+        <h2 id = "mypublisher">${myPublisher}</h2>
+        <h3 id ="mytitle">${myTitle}</h3>
+       </div>`)
+
     })
     }
     catch(e){
