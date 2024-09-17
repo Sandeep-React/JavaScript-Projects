@@ -15,7 +15,7 @@ const leftContainer = document.getElementById("left-container")
 const rightContainer = document.getElementById("right-container")
 
 searchBtn.addEventListener("click", ()=>{
-    // getRecipesData()
+    getRecipesData()
 })
 
 async function getRecipesData()
@@ -34,7 +34,7 @@ async function getRecipesData()
     const myId = i.id
         return leftContainer.insertAdjacentHTML("afterbegin",
 
-            `<a href="#"><div class="left-food-container">
+            `<a href="#${myId}"><div class="left-food-container">
         <img src="${myImageUrl}" id="myimage">
         <h2 id = "mypublisher">${myPublisher}</h2>
         <h3 id ="mytitle">${myTitle}</h3>
@@ -51,9 +51,11 @@ async function getRecipesData()
 // getRecipesData()
 
 async function loadParticularRecipe(){
-    const response = await fetch("https://forkify-api.herokuapp.com/api/v2/recipes/664c8f193e7aa067e94e8357")
+    const hashId = window.location.hash.slice(1)
+    console.log(hashId)
+    const response = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes/${hashId}`)
     const recipeData = await response.json()
-    console.log(recipeData)
+    // console.log(recipeData)
 
     const recipeObject = {
         publisher: recipeData.data.recipe.publisher,
@@ -64,7 +66,7 @@ async function loadParticularRecipe(){
         ingredients: recipeData.data.recipe.ingredients
     }
 
-    console.log(recipeObject.ingredients)
+    // console.log(recipeObject.ingredients)
 
     rightContainer.innerText =""
 
@@ -77,7 +79,7 @@ async function loadParticularRecipe(){
 
     <div class = "ingredients">
       ${recipeObject.ingredients.map(function(i){
-        console.log(i)
+        // console.log(i)
             return `<div>
                 <span>${i.description}</span> --
                 <span>${i.quantity}</span>
@@ -93,5 +95,7 @@ async function loadParticularRecipe(){
 }
 
 loadParticularRecipe()
+
+window.addEventListener("hashchange", loadParticularRecipe)
 
 // https://forkify-api.herokuapp.com/api/v2/recipes/:664c8f193e7aa067e94e8706
