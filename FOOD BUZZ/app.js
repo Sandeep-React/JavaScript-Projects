@@ -9,6 +9,8 @@ API key
 
 // https://forkify-api.herokuapp.com/api/v2/recipes?search=pizza&key=9c212eec-a3fe-4d83-bfe5-b69768886469
 
+
+import { storeReciepeData } from "./MVC/MyModel.js "
 const searchBtn = document.getElementById("search")
 const searchInput = document.getElementById("searchinput")
 const leftContainer = document.getElementById("left-container")
@@ -53,20 +55,22 @@ async function getRecipesData()
 async function loadParticularRecipe(){
     const hashId = window.location.hash.slice(1)
     console.log(hashId)
-    const response = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes/${hashId}`)
-    const recipeData = await response.json()
-    // console.log(recipeData)
+    // const response = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes/${hashId}`)
+    // const recipeData = await response.json()
+    // // console.log(recipeData)
 
-    const recipeObject = {
-        publisher: recipeData.data.recipe.publisher,
-        imageUrl: recipeData.data.recipe.image_url,
-        title: recipeData.data.recipe.title,
-        servings: recipeData.data.recipe.servings,
-        cookingTime: recipeData.data.recipe.cooking_time,
-        ingredients: recipeData.data.recipe.ingredients
-    }
+    // const recipeObject = {
+    //     publisher: recipeData.data.recipe.publisher,
+    //     imageUrl: recipeData.data.recipe.image_url,
+    //     title: recipeData.data.recipe.title,
+    //     servings: recipeData.data.recipe.servings,
+    //     cookingTime: recipeData.data.recipe.cooking_time,
+    //     ingredients: recipeData.data.recipe.ingredients
+    // }
 
     // console.log(recipeObject.ingredients)
+
+    storeReciepeData(hashId)
 
     rightContainer.innerText =""
 
