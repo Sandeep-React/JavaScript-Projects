@@ -5,8 +5,11 @@
 
 
 
+import { getJSON } from "./config/config.js"
+import { API_URL } from "./helpers/helpers.js"
 import { storeReciepeData } from "./MVC/MyModel.js "
 import { OneRecipeView } from "./MVC/OneRecipeView.js"
+
 
 
 const searchBtn = document.getElementById("search")
@@ -22,8 +25,9 @@ async function getRecipesData()
 {
     try{
     const searchItem = searchInput.value
-    const response = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes?search=${searchItem}&key=9c212eec-a3fe-4d83-bfe5-b69768886469`)
-    const recipesData = await response.json()
+    const recipesData = await getJSON(`${API_URL}?search=${searchItem}&key=9c212eec-a3fe-4d83-bfe5-b69768886469`)
+    // const response = await fetch(`${API_URL}?search=${searchItem}&key=9c212eec-a3fe-4d83-bfe5-b69768886469`)
+    // const recipesData = await response.json()
     const recpieArray = recipesData.data.recipes
     recpieArray.map(function(i){
     //   console.log(i)
@@ -52,7 +56,7 @@ async function getRecipesData()
 
 async function loadParticularRecipe(){
     const hashId = window.location.hash.slice(1)
-    console.log(hashId)
+    // console.log(hashId)
    
    await storeReciepeData(hashId)
 
