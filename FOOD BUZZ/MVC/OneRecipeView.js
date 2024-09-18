@@ -54,4 +54,10 @@ export class OneRecipeView{
   {
     window.addEventListener("hashchange", data) 
   }
+
+  handleError(){
+    this.rightContainer = document.getElementById("right-container")
+    this.rightContainer.innerText = ""
+    this.rightContainer.innerText = "Please enter a valid id!"
+  }
 }

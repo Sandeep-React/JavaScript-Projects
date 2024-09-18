@@ -10,8 +10,6 @@ import { API_URL } from "./helpers/helpers.js"
 import { storeReciepeData } from "./MVC/MyModel.js "
 import { OneRecipeView } from "./MVC/OneRecipeView.js"
 
-
-
 const searchBtn = document.getElementById("search")
 const searchInput = document.getElementById("searchinput")
 const leftContainer = document.getElementById("left-container")
