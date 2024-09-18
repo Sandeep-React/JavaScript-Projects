@@ -47,7 +47,11 @@ export class OneRecipeView{
   addDataToContainer(){
     this.rightContainer.insertAdjacentHTML("afterbegin", this.rightData)
   }
-    
- 
 
+
+  //
+  hashChangeEventHandler(data) // data = loadParticularRecipe  ----> Publisher
+  {
+    window.addEventListener("hashchange", data) 
+  }
 }

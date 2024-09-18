@@ -54,7 +54,8 @@ async function getRecipesData()
 
 // getRecipesData()
 
-async function loadParticularRecipe(){
+async function loadParticularRecipe() // Subscriber
+{
     const hashId = window.location.hash.slice(1)
     // console.log(hashId)
    
@@ -66,6 +67,22 @@ async function loadParticularRecipe(){
 
 loadParticularRecipe()
 
-window.addEventListener("hashchange", loadParticularRecipe)
+function callHashChangeEventHandler()
+{
+    const r = new OneRecipeView()
+    r.hashChangeEventHandler(loadParticularRecipe)
+}
+
+callHashChangeEventHandler()
+
+// window.addEventListener("hashchange", loadParticularRecipe) 
+
 
 // https://forkify-api.herokuapp.com/api/v2/recipes/:664c8f193e7aa067e94e8706
+
+/* 
+Publisher - subscriber design pattern
+
+Publisher ----> function --> that will basically hold the code --- hashChangeEventHandler function
+Subscriber ---> function --> that will be called when the event occurs  -- oadParticularRecipe function
+*/
