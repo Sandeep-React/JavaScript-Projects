@@ -58,6 +58,6 @@ export class OneRecipeView{
   handleError(){
     this.rightContainer = document.getElementById("right-container")
     this.rightContainer.innerText = ""
-    this.rightContainer.innerText = "Please enter a valid id!"
+    this.rightContainer.innerText = "Please enter a valid id! "
   }
 }

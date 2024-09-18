@@ -10,10 +10,7 @@ export const anotherRecipeObject = {
 
 export async function storeReciepeData(id){
    const recipeData = await getJSON(`${API_URL}/${id}`)
-    // const response = await fetch()
-    // const recipeData = await response.json()
-    // console.log(recipeData)
-
+    
     anotherRecipeObject.recipeObject = {
         publisher: recipeData.data.recipe.publisher,
         imageUrl: recipeData.data.recipe.image_url,
@@ -24,4 +21,16 @@ export async function storeReciepeData(id){
     }
 
     // console.log(anotherRecipeObject)
+}
+
+export const allData = {
+    allRecipeData: [] 
+}
+
+export async function getAllData(searchItem) {
+    
+    const recipesData = await getJSON(`${API_URL}?search=${searchItem}&key=9c212eec-a3fe-4d83-bfe5-b69768886469`)
+    const recpieArray = recipesData.data.recipes
+    allData.allRecipeData = recpieArray
+    // console.log(allData)
 }
