@@ -8,10 +8,10 @@
 import { getJSON } from "./config/config.js"
 import { API_URL } from "./helpers/helpers.js"
 import { AllRecieView } from "./MVC/AllRecipeView.js"
-import { getAllData } from "./MVC/MyModel.js"
+import {  getAllData } from "./MVC/MyModel.js"
 import { storeReciepeData } from "./MVC/MyModel.js "
 import { OneRecipeView } from "./MVC/OneRecipeView.js"
-
+import { allData } from "./MVC/MyModel.js"
 
 const searchBtn = document.getElementById("search")
 const searchInput = document.getElementById("searchinput")
@@ -29,7 +29,7 @@ async function getRecipesData()
 
     await getAllData(searchItem)
         const arv = new AllRecieView()
-             arv.render()
+             arv.render(allData.allRecipeData)
         
     }
     catch(e){
@@ -47,7 +47,7 @@ async function loadParticularRecipe() // Subscriber
    await storeReciepeData(hashId)
 
    const rv = new OneRecipeView()
-   rv.render()
+   rv.render(allData.allRecipeData)
 }
 
 loadParticularRecipe()
