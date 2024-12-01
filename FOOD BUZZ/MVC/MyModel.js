@@ -4,6 +4,7 @@ import { getJSON } from "../config/config.js"
 import { API_URL } from "../helpers/helpers.js"
 
 
+
 export const anotherRecipeObject = {
     recipeObject: { }
 }
@@ -24,7 +25,9 @@ export async function storeReciepeData(id){
 }
 
 export const allData = {
-    allRecipeData: [] 
+    allRecipeData: [],
+    page: 1,
+    dataPerPage: 10
 }
 
 export async function getAllData(searchItem) {
@@ -33,4 +36,11 @@ export async function getAllData(searchItem) {
     const recpieArray = recipesData.data.recipes
     allData.allRecipeData = recpieArray
     // console.log(allData)
+}
+
+export function paginationData(page = allData.page){
+    allData.page =page
+    const start = (page -1)*allData.dataPerPage // start =10
+    const stop = page * allData.dataPerPage//stop =20
+    return allData.allRecipeData.slice(start, stop)
 }

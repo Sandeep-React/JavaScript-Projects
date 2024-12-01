@@ -12,6 +12,7 @@ import {  getAllData } from "./MVC/MyModel.js"
 import { storeReciepeData } from "./MVC/MyModel.js "
 import { OneRecipeView } from "./MVC/OneRecipeView.js"
 import { allData } from "./MVC/MyModel.js"
+import { paginationData } from "./MVC/MyModel.js"
 
 const searchBtn = document.getElementById("search")
 const searchInput = document.getElementById("searchinput")
@@ -29,7 +30,8 @@ async function getRecipesData()
 
     await getAllData(searchItem)
         const arv = new AllRecieView()
-             arv.render(allData.allRecipeData)
+            //  arv.render(allData.allRecipeData)
+            arv.render(paginationData(1))
         
     }
     catch(e){
