@@ -13,6 +13,7 @@ import { storeReciepeData } from "./MVC/MyModel.js "
 import { OneRecipeView } from "./MVC/OneRecipeView.js"
 import { allData } from "./MVC/MyModel.js"
 import { paginationData } from "./MVC/MyModel.js"
+import { MyPaginationView } from "./MVC/MyPaginationView.js"
 
 const searchBtn = document.getElementById("search")
 const searchInput = document.getElementById("searchinput")
@@ -32,6 +33,10 @@ async function getRecipesData()
         const arv = new AllRecieView()
             //  arv.render(allData.allRecipeData)
             arv.render(paginationData(1))
+
+            const mpv = new MyPaginationView
+            mpv.render(allData)
+
         
     }
     catch(e){
