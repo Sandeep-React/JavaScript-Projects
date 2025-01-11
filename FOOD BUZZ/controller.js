@@ -32,7 +32,7 @@ async function getRecipesData()
     await getAllData(searchItem)
         const arv = new AllRecieView()
             //  arv.render(allData.allRecipeData)
-            arv.render(paginationData(1))
+            arv.render(paginationData(10))
 
             const mpv = new MyPaginationView
             mpv.render(allData)
