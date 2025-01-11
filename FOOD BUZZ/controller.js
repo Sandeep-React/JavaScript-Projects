@@ -67,6 +67,21 @@ function callHashChangeEventHandler()
 
 callHashChangeEventHandler()
 
+function controlPagination(no){
+    const arv = new AllRecieView()
+    arv.render(paginationData(no))
+    const mpv = new MyPaginationView
+    mpv.render(allData)
+}
+
+function callIt(){
+    const view = new MyPaginationView()
+    view.getPageNumberFromButton(controlPagination)
+
+}
+
+callIt()
+
 // window.addEventListener("hashchange", loadParticularRecipe) 
 
 
