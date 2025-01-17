@@ -14,6 +14,7 @@ import { OneRecipeView } from "./MVC/OneRecipeView.js"
 import { allData } from "./MVC/MyModel.js"
 import { paginationData } from "./MVC/MyModel.js"
 import { MyPaginationView } from "./MVC/MyPaginationView.js"
+import { ServingsView } from "./MVC/ServingsView.js"
 
 const searchBtn = document.getElementById("search")
 const searchInput = document.getElementById("searchinput")
@@ -81,6 +82,14 @@ function callIt(){
 }
 
 callIt()
+
+function servings(){
+ const sv = new ServingsView()
+ sv.render()
+}
+
+servings()
+  
 
 // window.addEventListener("hashchange", loadParticularRecipe) 
 

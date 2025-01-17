@@ -28,6 +28,8 @@ export class OneRecipeView{
      <h2 class = "right-title">Title: ${RecievedData.title}</h2>
      <h3 class = "right-publisher">Publisher: ${RecievedData.publisher}</h3>
      <h3 class = "right-servings">Servings: ${RecievedData.servings}</h3>
+     <button id = "inc">INCREASE</button>
+     <button id = "dec">DECREASE</button>
      <h3 class = "right-cooking-time">Cooking Time: ${RecievedData.cookingTime}</h3>
  
      <div class = "ingredients">
